@@ -15,7 +15,12 @@ const messages = [
   },
 ];
 
-indexRouter.get("/", (req, res) => res.send("Home page"));
+indexRouter.get("/", (req, res) =>
+  res.render("index", {
+    title: "Mini Messageboard",
+    messages: messages,
+  })
+);
 indexRouter.get("/new", (req, res) => res.send("New Message Form"));
 
 module.exports = indexRouter;
