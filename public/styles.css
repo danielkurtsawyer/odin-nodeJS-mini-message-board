@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px;
+  background-color: rgb(242, 242, 242);
+}
+
+h1 {
+  font-family: "IBM Plex Sans";
+}
+
+p,
+form {
+  font-family: "IBM Plex Mono";
+}
+
+.messagesContainer {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.messageContainer {
+  width: 350px;
+  padding: 16px;
+  background-color: rgb(207, 243, 255);
+  border: 1px solid rgb(101, 217, 255);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.messageContainer .user {
+  align-self: start;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(3, 106, 141);
+}
+
+.messageContainer .text {
+  align-self: center;
+}
+
+.messageContainer .date {
+  align-self: end;
+  font-size: 12px;
+  border-top: 1px solid rgb(3, 106, 141);
+}
