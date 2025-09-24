@@ -17,6 +17,7 @@ body {
 
 h1 {
   font-family: "IBM Plex Sans";
+  text-align: center;
 }
 
 p,
@@ -52,7 +53,8 @@ a {
 }
 
 div.messageContainer {
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 }
 
 .messageContainer .user {
@@ -74,7 +76,8 @@ div.messageContainer {
 form {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   gap: 24px;
   margin-top: 48px;
 
@@ -99,6 +102,7 @@ form .label-input-wrapper {
 form input {
   padding: 0 4px;
   border-radius: 8px;
+  width: 100%;
 }
 
 form input:invalid {
