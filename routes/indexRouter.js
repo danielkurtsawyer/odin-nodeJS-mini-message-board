@@ -33,9 +33,7 @@ indexRouter.get("/new", (req, res) =>
 
 indexRouter.get("/message/:id", (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const message = messages.find((message) => message.id === Number(id));
-  console.log(message);
 
   if (!message) {
     res.status(404).send("Message not found");
