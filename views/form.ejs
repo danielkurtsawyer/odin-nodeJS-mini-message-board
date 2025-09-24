@@ -9,15 +9,23 @@
   <body>
     <h1><%= title %></h1>
     <form method="POST" action="/new">
-      <div class="label-input-wrapper">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Bob" />
+      <div class="form-inner-wrapper">
+        <div class="label-input-wrapper">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Bob" required />
+        </div>
+        <div class="label-input-wrapper">
+          <label for="text">Message:</label>
+          <input
+            type="text"
+            id="text"
+            name="text"
+            placeholder="Hello World!"
+            required
+          />
+        </div>
       </div>
-
-      <div class="label-input-wrapper">
-        <label for="text">Message:</label>
-        <input type="text" id="text" name="text" placeholder="Hello World!" />
-      </div>
+      <button type="submit">Send Message</button>
     </form>
   </body>
 </html>

@@ -21,6 +21,10 @@ indexRouter.get("/", (req, res) =>
     messages: messages,
   })
 );
-indexRouter.get("/new", (req, res) => res.send("New Message Form"));
+indexRouter.get("/new", (req, res) =>
+  res.render("form", {
+    title: "New Message",
+  })
+);
 
 module.exports = indexRouter;
