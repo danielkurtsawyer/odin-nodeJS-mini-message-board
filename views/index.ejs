@@ -8,10 +8,12 @@
   </head>
   <body>
     <h1><%= title %></h1>
+    <a href="/new"><button>Add a message</button></a>
     <div class="messagesContainer">
       <% messages.forEach((message) => { %> <%- include('messages/message',
       {user: message.user, text: message.text, date:
-      message.added.toISOString().split('T')[0]}) %> <% }) %>
+      message.added.toISOString().split('T')[0], time:
+      message.added.toLocaleTimeString('en-US')}) %> <% }) %>
     </div>
   </body>
 </html>

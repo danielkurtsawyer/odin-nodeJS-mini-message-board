@@ -27,4 +27,12 @@ indexRouter.get("/new", (req, res) =>
   })
 );
 
+indexRouter.post("/new", (req, res) => {
+  const user = req.body.name;
+  const text = req.body.text;
+  const added = new Date();
+  messages.push({ text: text, user: user, added: added });
+  res.redirect("/");
+});
+
 module.exports = indexRouter;
