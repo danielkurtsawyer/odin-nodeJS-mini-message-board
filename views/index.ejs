@@ -13,7 +13,7 @@
       <% messages.forEach((message) => { %> <%- include('messages/message',
       {user: message.user, text: message.text, date:
       message.added.toISOString().split('T')[0], time:
-      message.added.toLocaleTimeString('en-US')}) %> <% }) %>
+      message.added.toLocaleTimeString('en-US'), id: message.id}) %> <% }) %>
     </div>
   </body>
 </html>
