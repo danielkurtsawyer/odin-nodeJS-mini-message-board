@@ -14,10 +14,7 @@
     <div class="messageContainer">
       <p class="user"><%=message.user%></p>
       <p class="text"><%=message.text%></p>
-      <p class="date">
-        <%=message.added.toISOString().split('T')[0]%>
-        <%=message.added.toLocaleTimeString('en-US')%>
-      </p>
+      <p class="date"><%=message.added.toISOString().split('T')[0]%></p>
     </div>
   </body>
 </html>
