@@ -11,6 +11,15 @@
     <a href="/"
       ><button class="button-secondary">Back to Messageboard</button></a
     >
+    <% if (locals.errors) { %>
+    <div class="error-container">
+      <ul>
+        <% errors.forEach (function(error) { %>
+        <li><%=error.msg %></li>
+        <% }); %>
+      </ul>
+    </div>
+    <% } %>
     <form method="POST" action="/new">
       <div class="form-inner-wrapper">
         <div class="label-input-wrapper">

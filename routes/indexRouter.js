@@ -1,5 +1,5 @@
 const { Router } = require("express");
-
+const messagesController = require("../controllers/messagesController");
 const indexRouter = Router();
 
 const messages = [
@@ -19,38 +19,15 @@ const messages = [
 
 let id = 3;
 
-indexRouter.get("/", (req, res) =>
-  res.render("index", {
-    title: "Mini Messageboard",
-    messages: messages,
-  })
-);
+indexRouter.get("/", messagesController.getMessages);
 indexRouter.get("/new", (req, res) =>
   res.render("form", {
     title: "New Message",
   })
 );
 
-indexRouter.get("/message/:id", (req, res) => {
-  const { id } = req.params;
-  const message = messages.find((message) => message.id === Number(id));
+indexRouter.get("/message/:id", messagesController.getMessage);
 
-  if (!message) {
-    res.status(404).send("Message not found");
-    return;
-  }
-  res.render("messagePage", {
-    title: `Message ${id} Details`,
-    message: message,
-  });
-});
-
-indexRouter.post("/new", (req, res) => {
-  const user = req.body.name;
-  const text = req.body.text;
-  const added = new Date();
-  messages.push({ text: text, user: user, added: added, id: id++ });
-  res.redirect("/");
-});
+indexRouter.post("/new", messagesController.newMessagePost);
 
 module.exports = indexRouter;
