@@ -14,12 +14,12 @@ const addExtraSingleQuote = (value) => {
 const validateMessage = [
   body("name")
     .trim()
-    .customSanitizer(addExtraSingleQuote)
+    .escape()
     .isLength({ min: 1, max: 255 })
     .withMessage(`Name ${userErr}`),
   body("text")
     .trim()
-    .customSanitizer(addExtraSingleQuote)
+    .escape()
     .isLength({ min: 1, max: 500 })
     .withMessage(`Message ${textErr}`),
 ];
